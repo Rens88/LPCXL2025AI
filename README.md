@@ -6,7 +6,6 @@ The "Data Description" below describes in detail the content of the data.
 It can be used to start prompting an AI chatbot.
 
 ## Data Description
-## Data Description
 Dataframe "df" contains information about athletes (denoted by "user_id") over time (denoted by "date") during a 2 year period.
 It contains a column "injury_onset" (Boolean) that indicates whether that athlete got injured on that day.
 The column "to_be_injured" contains either 0s, 1s or NA (int64) and can be used for (logistic) regression.
@@ -34,7 +33,8 @@ There are some metrics (1-10) that quantify the athlete's wellbeing: "Energy Sco
 These metrics have been summarized for each day by taking the average ("Wellness Average").
 
 Most importantly, it contains a set of columns with the suffix "_AVG_prev_07_days" that summarize the 7 days preceding the current day.
-These columns should be used in combination for any predictions of to_be_injured.
+Three temporal aggregation methods were applied to summarize the 7 days preceding an injury: average, daily average and slope.
+These columns should be used in combination for any predictions of "to_be_injured".
 
 ## Example questions
 - I'm a coach and I want to improve my training schedules. Suggest me some analyses with the described data.
